@@ -1,9 +1,6 @@
-//////////////////////////////////////////  MONDAY   //////////////////////////////////////////
-
-
 // TURN THE INCOMING SENTENCE INTO AN ACRONYM
 // EX. "Live From Saturday Night Live" => "LFSNL"
-// NOTE. YOU CAN USE .SPLIT() METHOD
+// NOTE: YOU CAN USE .SPLIT() METHOD
 
 function acronyms(string){
     var acronym = ''  // to be able to return the letters as one string
@@ -11,15 +8,15 @@ function acronyms(string){
     for (var i = 0; i < words.length; i++){
         acronym += words[i][0]
     }
-    console.log(words)  // ["Live", "From", "Saturday", "Night", "Live"]
     return acronym
 }
-console.log(acronyms("Live From Saturday Night Live"))  // "LFSNL"
+console.log(acronyms("Live From Saturday Night Live"))
+
 
 
 // RETURN THE REVERSED STRING OF INPUT
 // EX. "HELLO" => "OLLEH"
-// NOTE. DO NOT USE ANY BUILT IN METHODS
+// DO NOT USE ANY BUILT IN METHODS
 
 function stringReverse(string){
     var newStr = ''
@@ -28,8 +25,7 @@ function stringReverse(string){
     }
     return newStr
 }
-console.log(stringReverse("HELLO"))  // "OLLEH"
-
+console.log(stringReverse("HELLO"))
 
 // the following doesn't work because strings are immutable
 function stringReverse(string){
@@ -41,8 +37,6 @@ function stringReverse(string){
 }
 console.log(stringReverse("HELLO"))
 
-
-//////////////////////////////////////////  TUESDAY   //////////////////////////////////////////
 
 
 // RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
@@ -65,7 +59,7 @@ console.log(parensValidCounter("()(())"))
 console.log(parensValidCounter("(()()"))
 console.log(parensValidCounter("())(()"))
 
-// -----------------------------------------------------------------------------------------------//
+
 
 // TAKE PARENS VALID AND MAKE IT ACCOUNT FOR PARENS, SQUARE BRACKETS, AND SQUIGGLY BRACKETS
 // WILL REQUIRE A STACK IMPLEMENTATION
@@ -90,8 +84,6 @@ function bracesValid(string){
 // need to test it
 
 
-//////////////////////////////////////////  WEDNESDAY   //////////////////////////////////////////
-
 
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
 // "HELLO" => FALSE
@@ -113,7 +105,7 @@ console.log(isPalindrome('tacocat'))
 console.log(isPalindrome('abba'))
 console.log(isPalindrome('someone'))
 
-// -----------------------------------------------------------------------------------------------//
+
 
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
 // HINT: YOU WANT TO USE A DICTIONARY
@@ -144,7 +136,10 @@ function isAnagram(string1, string2){
     }
     return true
 }
-// need to test
+console.log(isAnagram("ATE","TEA"))
+console.log(isAnagram("LISTEN","SILENT"))
+console.log(isAnagram("LISTEN","SILENZ"))
+console.log(isAnagram("DEER","REDD"))
 
 
 // without dictionary:
@@ -167,15 +162,11 @@ function isAnagram(string1, string2){
         return true
     }
 }
-// need to test
+console.log(isAnagram("ATE","TEA"))
+console.log(isAnagram("LISTEN","SILENT"))
+console.log(isAnagram("LISTEN","SILENZ"))
+console.log(isAnagram("DEER","REDD"))
 
-// EX. "ATE", "TEA" => TRUE
-// EX. "LISTEN", "SILENT" => TRUE
-// EX. "LISTEN", "SILENZ" => FALSE
-// EX. "DEER", "REDD" => FALSE
-
-
-//////////////////////////////////////////  THURSDAY   //////////////////////////////////////////
 
 
 // GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
@@ -198,8 +189,8 @@ function bookIndex(array){
     }
     return str;
 }
+console.log(bookIndex([1,13,14,15,37,38,70]))
 
-// -----------------------------------------------------------------------------------------------//
 
 // Given an arr and a separator string, output a string of every item in the array separated by the separator.
 // EX. [1,2,3] , ", " => "1, 2, 3"
@@ -218,10 +209,11 @@ function join(arr, separator) {
     }
     return joined + arr[arr.length - 1];
 }
-join([1,2,3] , ", ")
+console.log(join([1,2,3] , ", "))
+console.log(join([1,2,3] , "-"))
+console.log(join([1] , "-"))
+console.log(join([] , ","))
 
-
-//////////////////////////////////////////  FRIDAY   //////////////////////////////////////////
 
 
 // GIVEN AN OBJECT WITH KEY VALUE PAIRS, SWAP THE KEYS AND VALUES OF THE OBJECT
@@ -246,7 +238,7 @@ function invertObj(obj){
     return newobj
 }
 
-//alternate in-place:
+// alternate in-place:
 function invertObj2(obj){
     for (var key in obj) {
         obj[obj[key]] = key
@@ -256,8 +248,6 @@ function invertObj2(obj){
 }
 
 
-
-// -----------------------------------------------------------------------------------------------//
 
 // GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
 // EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
@@ -280,14 +270,14 @@ function coinChange(num){
 }
 
 // alternate:
-
 function minCoinChange(num){
-    let change = {};
-    change['quarter'] = Math.floor(num / 25);
-    num -= change['quarter'] * 25;
-    change['dime'] = Math.floor(num / 10);
-    num -= change['dime'] * 10;
-    change['nickel'] = Math.floor(num / 5);
-    num -= change['nickel'] * 5;
-    change['penny'] = num;
-    return change;
+    change = {}
+    change['quarter'] = Math.floor(num / 25)
+    num -= change['quarter'] * 25
+    change['dime'] = Math.floor(num / 10)
+    num -= change['dime'] * 10
+    change['nickel'] = Math.floor(num / 5)
+    num -= change['nickel'] * 5
+    change['penny'] = num
+    return change
+}

@@ -35,7 +35,6 @@ console.log(factorial(5))
 // 0, 1, 1, 2, 3, 5, 8, 13  -  fib #s (treating this like an array)
 // 0, 1, 2, 3, 4, 5, 6, 7  -  corresponding index #s 
 
-// solution in class
 function fib(num){
     var prevNum = 0
     var currentNum = 1

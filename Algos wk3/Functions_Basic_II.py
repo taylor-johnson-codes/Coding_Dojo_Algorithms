@@ -7,9 +7,7 @@ def countdown(num):
     for i in range(num, -1, -1):
         newList.append(i)  # .push in JS
     return newList
-
-print(countdown(5))  
-# prints [5,4,3,2,1,0]
+print(countdown(5))  # prints [5,4,3,2,1,0]
 
 
 # Print and Return - Create a function that will receive a list with two numbers. Print the first value and return the second.
@@ -27,11 +25,13 @@ print(printAndReturn([5,10]))  # prints 10
 def firstPlusLength(list):
     total = list[0] + len(list)
     return total
-print(firstPlusLength([1,2,3,4,5]))
+print(firstPlusLength([1,2,3,4,5])) # prints 6
 
 
-# Values Greater than Second - Write a function that accepts a list and creates a new list containing only the values from the original list that are greater than its 2nd value. Print how many values this is and then return the new list. If the list has less than 2 elements, have the function return False
-# Example: values_greater_than_second([5,2,3,2,1,4]) should print 3 and return [5,3,2]
+# Values Greater than Second - Write a function that accepts a list and creates a new list containing only the values from the original list 
+# that are greater than its 2nd value. Print how many values this is and then return the new list. If the list has less than 2 elements, 
+# have the function return False
+# Example: values_greater_than_second([5,2,3,2,1,4]) should print 3 and return [5,3,4]
 # Example: values_greater_than_second([3]) should return False
 
 def valsGreaterThan(list):
@@ -41,10 +41,10 @@ def valsGreaterThan(list):
     for i in range(0,len(list)):
         if list[i] > list[1]:
             newList.append(list[i])
-    print("NEW VALUES:", len(newList))
+    print(len(newList))
     return newList
-print(valsGreaterThan([5,2,3,2,1,4]))  # RECHECK THIS
-print(valsGreaterThan([3]))
+print(valsGreaterThan([5,2,3,2,1,4]))  # prints 3 and [5,3,4]
+print(valsGreaterThan([3]))  # prints False
 
 
 # This Length, That Value - Write a function that accepts two integers as parameters: size and value. 
@@ -57,5 +57,5 @@ def lengthValue(size, value):
     for i in range(0,size):
         newLists.append(value)
     return newLists
-print(lengthValue(4,7))
-print(lengthValue(6,2))
+print(lengthValue(4,7))  # prints [7,7,7,7]
+print(lengthValue(6,2))  # prints [2,2,2,2,2,2]
