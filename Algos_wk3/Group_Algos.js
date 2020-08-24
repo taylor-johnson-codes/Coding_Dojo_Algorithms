@@ -42,9 +42,9 @@ console.log(stringReverse("HELLO"))
 // RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
 
 function parensValidCounter(string){
-    let counter = 0;
+    counter = 0;
     for(char of string){
-        if(char ==="("){
+        if(char =="("){
             counter++
         }
         else{
@@ -54,6 +54,7 @@ function parensValidCounter(string){
     }
     if(counter == 0) return true
 }
+
 console.log(parensValidCounter("()()()"))
 console.log(parensValidCounter("()(())"))
 console.log(parensValidCounter("(()()"))
@@ -90,7 +91,7 @@ function bracesValid(string){
 // "KAYAK" => TRUE
 
 function isPalindrome(string){
-    for(let i = 0; i < Math.floor(string.length/2); i++){
+    for(i = 0; i < Math.floor(string.length/2); i++){
         if(string[i] == string[string.length-1-i]){
             continue
         }
