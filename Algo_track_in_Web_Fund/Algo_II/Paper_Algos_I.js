@@ -100,9 +100,17 @@ console.log(z);
 // If x is negative, have it print/log "negative number' and have the function return false.
 
 function printUpTo(x){
-    // your code here
+    if (x < 0) {
+        console.log("negative number");
+        return false;
+    }
+    else{
+        for(var i = 0; i <= x; i++){
+            console.log(i);
+        }
+    }
 }
-printUpTo(1000000); // should print all the integers from 1 to 1000000
+printUpTo(100); // should print all the integers from 1 to 100
 var y = printUpTo(-10); // should return false
 console.log(y); // should print false
 
@@ -112,7 +120,11 @@ console.log(y); // should print false
 
 function printSum(x){
     var sum = 0;
-    //your code here
+    for(i=0; i<=x; i++){
+        console.log("i is", i);
+        sum += i;
+        console.log("sum is", sum);
+    }
     return sum
 }
 var y = printSum(255) // should print all the integers from 0 to 255 and with each integer print the sum so far.
@@ -124,7 +136,7 @@ console.log(y) // should print 32640
 function printSumArray(x){
     var sum = 0;
     for(var i=0; i<x.length; i++) {
-      //your code here
+        sum += x[i];
     }
     return sum;
 }
@@ -133,3 +145,14 @@ console.log( printSumArray([1,2,3]) ); // should log 6
 
 // Create a function that returns the largest element in a given array.  
 // For example largestElement( [1,30,5,7] ) should return 30.
+
+function largestElement(arr){
+    big = arr[0];
+    for(var i=1; i<arr.length; i++) {
+        if(arr[i] > big){
+            big = arr[i];
+        }
+    }
+    return big;
+}
+console.log( largestElement( [1,30,5,7] ) ); // returns 30!
