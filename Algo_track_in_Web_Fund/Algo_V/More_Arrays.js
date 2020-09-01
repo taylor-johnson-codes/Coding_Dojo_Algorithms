@@ -43,3 +43,28 @@ console.log([10,20,30,40,50].reverse());
 // Create a function that changes a given array to list each original element twice, retaining original order.  
 // Have the function return the new array.  For example repeatTwice( [4,”Ulysses”, 42, false] ) should return 
 // [4,4, “Ulysses”, “Ulysses”, 42, 42, false, false].
+
+function repeatTwice(arr){
+    let newArr = [];
+    for(i=0;i<arr.length;i++){
+        newArr.push(arr[i]);
+        newArr.push(arr[i]);
+    }
+    return newArr;
+}
+console.log(repeatTwice( [4,"Ulysses", 42, false] ));
+
+
+function repeatWithSplice(arr){
+    for(i=0;i<arr.length;i+=2){
+        arr.splice(i, 0, arr[i]);
+    }
+    return arr;
+}
+
+console.log(repeatWithSplice( [4,"Ulysses", 42, false] ));
+
+/*
+arr.splice(index, 0, item); will insert item into arr at the specified index 
+(deleting 0 items first, that is, it's just an insert).
+*/
