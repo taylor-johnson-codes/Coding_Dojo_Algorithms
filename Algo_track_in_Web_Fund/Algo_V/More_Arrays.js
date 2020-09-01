@@ -2,7 +2,7 @@
 // For example resetNegatives( [1,2,-1, -3]) should return [1,2,0,0].
 
 function resetNegatives(arr){
-    for(i=0;i<arr.length;i++){
+    for(var i=0;i<arr.length;i++){
         if(arr[i] < 0){
             arr[i] = 0;
         }
@@ -16,7 +16,7 @@ console.log(resetNegatives( [1,2,-1, -3]));  // prints [1,2,0,0]
 // For example moveForward( [1,2,3]) should return [2,3,0].
 
 function moveForward(arr){
-    for(i=0;i<arr.length;i++){
+    for(var i=0;i<arr.length;i++){
         arr[i] = arr[i] + 1;
     }
     arr[arr.length - 1] = 0;
@@ -27,7 +27,17 @@ console.log(moveForward( [1,2,3]));  // prints [2,3,0]
 
 // Given an array, return an array with values in a reversed order.  For example, returnReversed([1,2,3]) should return [3,2,1].
 
-
+function returnReversed(arr){
+    for(var i = 0; i <= Math.floor(arr.length/2); i++){
+        var temp = arr[i];
+        arr[i] = arr[arr.length - 1 - i];
+        arr[arr.length - 1 - i] = temp;
+    }
+    return arr;
+}
+console.log(returnReversed([1,2,3]));
+console.log(returnReversed([10,20,30,40,50]));
+console.log([10,20,30,40,50].reverse());
 
 
 // Create a function that changes a given array to list each original element twice, retaining original order.  
